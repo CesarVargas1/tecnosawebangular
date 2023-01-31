@@ -1,0 +1,2316 @@
+/* You can add global styles to this file, and also import other style files */
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+}
+
+a {
+    color: #f16024;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffce3a;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+/*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #f16024;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #0f163a;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+/*--------------------------------------------------------------
+  # Header 
+  --------------------------------------------------------------*/
+#header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 20px 0;
+    background: rgba(55, 64, 85, 0.9);
+}
+
+#header.header-transparent {
+    background: transparent;
+    padding: 5px 0;
+}
+
+#header.header-scrolled {
+    background: rgba(13, 7, 65, 0.9);
+    padding: 5px 0;
+}
+
+#header .logo {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+    color: #fff;
+}
+
+#header .logo img {
+    max-height: 70px;
+}
+/*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+/*
+   Desktop Navigation 
+  */
+.navbar {
+    padding: 0;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    color: #fff;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+    color: #f16024;
+}
+
+.navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 0px 0;
+    /*---borde sobra de cada boton--------*/
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+}
+
+.navbar .dropdown ul li {
+    min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
+    color: #414c64;
+}
+
+.navbar .dropdown ul a i {
+    font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover>a {
+    color: #f16024;
+    background-color: #0f163a;
+}
+
+.navbar .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+}
+
+@media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+        left: -90%;
+    }
+
+    .navbar .dropdown .dropdown:hover>ul {
+        left: -100%;
+    }
+}
+/*
+   Mobile Navigation 
+  */
+.mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+/*@media (max-width: 991px este)*/
+@media (max-width: 930px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+}
+
+.navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(45, 53, 69, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #414c64;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+    color: #f16024;
+}
+
+.navbar-mobile .dropdown ul {
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+    min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+    padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+    font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover>a {
+    color: #f16024;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+    display: block;
+}
+/*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+#inicio {
+    width: 100%;
+    height: 80vh;
+    background: url("/assets/img/inicio-bg.jpg") top center;
+    background-size: cover;
+    position: relative;
+}
+
+#inicio:before {
+    content: "";
+    background: rgba(45, 53, 69, 0.7);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#inicio .container {
+    text-align: center;
+    padding-top: 50px;
+}
+/*@media (max-width: 992px)*/
+@media (max-width: 892px) {
+    #inicio .container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+           }
+}
+
+#inicio h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+}
+
+#inicio h2 {
+    color: #eee;
+    margin: 15px 0 0 0;
+    font-size: 22px;
+}
+
+#inicio .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 9px 35px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin-top: 40px;
+    border: 2px solid #f16024;
+    color: #fff;
+}
+
+#inicio .btn-get-started:hover {
+    background: #f16024;
+}
+/*@media (min-width: 1024px)*/
+@media (min-width: 980px) {
+    #inicio {
+        background-attachment: fixed;
+    }
+}
+/*@media (max-width: 768px)*/
+@media (max-width: 960px) {
+    #inicio {
+        height: 100vh;
+    }
+
+    #inicio h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #inicio h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+/*cuadrossanitaria*/
+
+.cuadrossanitaria {
+    padding-top: 10px;
+  }
+  
+  .cuadrossanitaria .box {
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.3s;
+  }
+  
+  .cuadrossanitaria .box span {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #F26225;
+  }
+  
+  .cuadrossanitaria .box h4 {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    margin: 20px 0;
+    color: #0F163A;
+  }
+  
+  .cuadrossanitaria .box p {
+    color: #605E62;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cuadrossanitaria .box:hover {
+    background: #0F163A;
+    padding: 30px 30px 70px 30px;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+  }
+  
+  .cuadrossanitaria .box:hover span,
+  .cuadrossanitaria .box:hover h4,
+  .cuadrossanitaria .box:hover p {
+    color: #fff;
+  }
+  
+/*cuadrossanitaria*/
+
+/*tuberiasanitaria inicio*/
+
+#tuberiasanitaria {
+    width: 100%;
+    height: 80vh;
+    background: url("/img/tuberia/tuberiamixfondo.jpg") top center;
+    background-size: cover;
+    position: relative;
+}
+
+#tuberiasanitaria:before {
+    content: "";
+    background: rgba(45, 53, 69, 0.7);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#tuberiasanitaria .container {
+    text-align: center;
+    padding-top: 50px;
+}
+/*@media (max-width: 992px)*/
+@media (max-width: 892px) {
+    #tuberiasanitaria .container {
+        padding-top: 100PX;
+        padding-bottom: 100px;
+    }
+}
+
+#tuberiasanitaria h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+}
+
+#tuberiasanitaria h2 {
+    color: #eee;
+    margin: 15px 0 0 0;
+    font-size: 22px;
+}
+
+#tuberiasanitaria .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 9px 35px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin-top: 40px;
+    border: 2px solid #f16024;
+    color: #fff;
+}
+
+#tuberiasanitaria .btn-get-started:hover {
+    background: #f16024;
+}
+/*@media (min-width: 1024px)*/
+@media (min-width: 980px) {
+    #tuberiasanitaria {
+        background-attachment: fixed;
+    }
+}
+/*@media (max-width: 768px)*/
+@media (max-width: 960px) {
+    #tuberiasanitaria {
+        height: 100vh;
+    }
+
+    #tuberiasanitaria h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #tuberiasanitaria h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+/* ctatuberia pendiente*/
+
+#call-to-action2  {
+    overflow: hidden;
+    background: linear-gradient(rgba(28, 12, 108, 0.65), rgba(229, 97, 45, 0.4)),
+      url(/assets/img/clients/client-4Q.png) fixed center center;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+#call-to-action2 .ctatuberia-title {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#call-to-action2 .ctatuberia-text {
+    color: #fff;
+}
+
+@media (min-width: 769px) {
+    #call-to-action2 .ctatuberia-btn-container {
+        display: flex;
+        align-items: center;
+         display: inline-block;
+        justify-content: flex-end;
+    }
+}
+
+#call-to-action2 .ctatuberia-btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 25px;
+    transition: background 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+#call-to-action2 .ctatuberia-btn:hover {
+    background: #c53a13;
+    border: 2px solid #163a0f;
+}
+
+
+
+
+/* ctatuberia*/
+
+/*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+}
+
+.section-bg {
+    background-color: #f7f8fa;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    color: #0F163A;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #f16024;
+    bottom: 0;
+    left: calc(50% - 25px);
+}
+
+.section-title p {
+    margin-bottom: 0;
+    font-size: 24px;
+    color: #0f163a;
+}
+/*--------------------------------------------------------------
+  # Breadcrumbs
+  --------------------------------------------------------------*/
+.breadcrumbs {
+    padding: 20px 0;
+    background-color: #fafafc;
+    min-height: 40px;
+    margin-top: 82px;
+}
+/*@media (max-width: 992px)*/
+@media (max-width: 980px) {
+    .breadcrumbs {
+        margin-top: 68px;
+    }
+}
+
+.breadcrumbs h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+}
+/*@media (max-width: 992px)*/
+@media (max-width: 980px) {
+    .breadcrumbs h2 {
+        margin: 0 0 10px 0;
+    }
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.breadcrumbs ol li+li {
+    padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #6c757d;
+    content: "/";
+}
+/*@media (max-width: 768px)
+*/
+@media (max-width: 768px) {
+    .breadcrumbs .d-flex {
+        display: block !important;
+    }
+
+    .breadcrumbs ol {
+        display: block;
+    }
+
+    .breadcrumbs ol li {
+        display: inline-block;
+    }
+}
+/*--------------------------------------------------------------
+  # Clients
+  --------------------------------------------------------------*/
+.clients {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.clients img {
+    max-width: 75%;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    padding: 15px 0;
+    filter: grayscale(100);
+}
+
+.clients img:hover {
+    filter: none;
+    transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+    .clients img {
+        max-width: 40%;
+    }
+}
+/*--------------------------------------------------------------
+  #  nuestrosproductos
+  --------------------------------------------------------------*/
+.nuestrosproductos .member {
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+    border-radius: 15px;
+    background: #0f173a;
+    box-shadow: 0px 2px 15px rgba(65, 76, 100, 0.06);
+}
+
+.nuestrosproductos .member .member-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.nuestrosproductos .member .social {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    text-align: center;
+    background: #f26225;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nuestrosproductos .member .social a {
+    transition: color 0.3s;
+    color: #ffffff;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nuestrosproductos .member .social p {
+    transition: color 0.3s;
+    color: #ffffff;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nuestrosproductos .member .social a i {
+    line-height: 0;
+}
+
+.nuestrosproductos .member .social a:hover {
+    color: #0F163A;
+}
+
+
+.nuestrosproductos .member .social p:hover {
+    color: #0F163A;
+}
+.nuestrosproductos .member .social i {
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+.nuestrosproductos .member .member-info {
+    padding: 25px 15px;
+}
+
+.nuestrosproductos .member .member-info h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #414c64;
+    color: #fff;
+}
+
+.nuestrosproductos .member .member-info span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaaaaa;
+}
+
+.nuestrosproductos .member .member-info p {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+}
+
+.nuestrosproductos .member:hover .social {
+    opacity: 5;
+}
+/* seccioninformacion
+  --------------------------------*/
+#call-to-action {
+    overflow: hidden;
+    background: linear-gradient(rgba(28, 12, 108, 0.65), rgba(229, 97, 45, 0.4)),
+      url(/assent/img/call-to-action-bg2.jpg) fixed center center;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+#call-to-action .cta-title {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#call-to-action .cta-text {
+    color: #fff;
+}
+
+@media (min-width: 769px) {
+    #call-to-action .cta-btn-container {
+        display: flex;
+        align-items: center;
+        display: inline-block;
+        justify-content: flex-end;
+    }
+}
+
+#call-to-action .cta-btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 25px;
+    transition: background 0.5s;
+    margin: 10px;
+    border: 2px solid rgb(87, 242, 31);
+    color: #fff;
+}
+
+#call-to-action .cta-btn:hover {
+    background: #c53a13;
+    border: 2px solid #921fc0;
+}
+
+
+.cta {
+    background: #644163;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.cta h3 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.cta p {
+    color: #fff;
+}
+
+.cta .cta-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 35px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid #f16024;
+    color: #fff;
+}
+
+.cta .cta-btn:hover {
+    background: #f16024;
+}
+
+/*--------------------------------------------------------------
+# Section tablatuberiapvc
+--------------------------------------------------------------*/
+.tablatuberiapvc .nav-tabs {
+    border: 0;
+    color: #F16024;
+  }
+  
+  .tablatuberiapvc .nav-link {
+    padding: 15px 0;
+    transition: 0.3s;
+    color: var(--color-secondary);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+    border: 0;
+    border-bottom: 4px solid #0F163A;
+  }
+  
+  .tablatuberiapvc .nav-link i {
+    padding-right: 15px;
+    font-size: 48px;
+  }
+  
+  .tablatuberiapvc .nav-link h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #0F163A;
+    text-align: center;
+  }
+
+  /*  @media (max-width: 575px)*/
+  @media (max-width: 650px) {
+    .tablatuberiapvc .nav-link h4 {
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+  
+  .tablatuberiapvc .nav-link:hover {
+    color: var(--color-secondary);
+  }
+  
+  .tablatuberiapvc .nav-link.active {
+    color: var(--color-secondary);
+    background-color: transparent;
+    border-color: var(--color-secondary);
+  }
+
+  .tablatuberiapvc .tablatuberiapvc-btn a i{
+    width: 30.33%;
+    display: flex;
+    align-items: center;
+}
+
+.tablatuberiapvc .tablatuberiapvc-btn{
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 10px 35px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid #0F163A; 
+    color: #F16024;
+}
+
+.tablatuberiapvc .tablatuberiapvc-btn:hover {
+    background: #0F163A; 
+}
+
+  .tablatuberiapvc .tab-content {
+    margin-top: 30px;
+  }
+  
+  .tablatuberiapvc .tab-pane h3 {
+    font-weight: 700;
+    font-size: 32px;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .tablatuberiapvc .tab-pane h3:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-primary);
+    left: 0;
+    bottom: 0;
+  }
+
+  .tablatuberiapvc .tab-pane ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .tablatuberiapvc .tab-pane ul li {
+    padding-top: 10px;
+  }
+  
+  .tablatuberiapvc .tab-pane ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: var(--color-primary);
+  }
+  
+  .tablatuberiapvc .tab-pane p:last-child {
+    margin-bottom: 0;
+  }
+
+/*new tablatuberiapvc*/
+
+/*infotuberia */
+.infotuberia .content+.content {
+    margin-top: 100px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .infotuberia .content h3 {
+    font-weight: 600;
+    font-size: 26px;
+  }
+  
+  .infotuberia .content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .infotuberia .content ul li {
+    padding-bottom: 10px;
+  }
+  
+  .infotuberia .content ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #0F173A;
+  }
+  
+  .infotuberia .content p:last-child {
+    margin-bottom: 0;
+  }
+    
+  /*infotuberia*/
+
+/*seccioninformacion */
+/* Product Featuress Section
+  --------------------------------*/
+#features {
+    background: #fff;
+    padding: 60px 0 0 0;
+    overflow: hidden;
+}
+
+#features .features-img {
+    text-align: center;
+    padding-top: 20px;
+}
+
+@media (min-width: 769px) {
+    #features .features-img {
+        padding-top: 120px;
+        margin-top: -40px;
+    }
+}
+
+#features .features-img img {
+    max-width: 100%;
+}
+
+#features .box {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#features .icon {
+    margin-bottom: 10px;
+}
+
+#features .icon i {
+    color: #666666;
+    font-size: 40px;
+    transition: 0.5s;
+}
+
+#features .icon i:before {
+    background: #1dc8cd;
+    background: linear-gradient(45deg, #F16024 0%, #0F163A 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#features .title {
+    font-weight: 300;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+#features .title a {
+    color: #111;
+}
+
+#features .description {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+#features .section-description {
+    padding-bottom: 10px;
+}
+/* Product Advanced Featuress Section    --------------------------------*/
+
+#advanced-features {
+    overflow: hidden;
+    text-align: center;
+}
+
+#advanced-features .features-row {
+    padding: 60px 0 30px 0;
+}
+
+#advanced-features h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000;
+    text-align: justify;
+}
+
+#advanced-features h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+    text-align: justify;
+}
+
+#advanced-features p {
+    line-height: 24px;
+    color: #777;
+    margin-bottom: 30px;
+    text-align: justify;
+    font-size: 24px;
+}
+
+#advanced-features i {
+    color: #666666;
+    font-size: 64px;
+    transition: 0.5s;
+    float: left;
+    padding: 0 15px 0px 0;
+    line-height: 1;
+}
+
+#advanced-features i:before {
+    background: #1dc8cd;
+    background: linear-gradient(45deg, #1dc8cd 0%, #55fabe 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#advanced-features .advanced-feature-img-right {
+    max-width: 100%;
+    float: right;
+    padding: 0 0 30px 30px;
+}
+
+#advanced-features .advanced-feature-img-left {
+    max-width: 100%;
+    float: left;
+    padding: 0 30px 30px 0;
+}
+
+@media (max-width: 768px) {
+
+    #advanced-features .advanced-feature-img-right,
+    #advanced-features .advanced-feature-img-left {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 992px) {
+
+    #advanced-features .advanced-feature-img-right,
+    #advanced-features .advanced-feature-img-left {
+        max-width: 100%;
+        float: none;
+        padding: 0 0 30px 0;
+    }
+}
+/*fin nuevo*/
+/*--------------------------------------------------------------
+  # Abouut tuberiapvc sanitariatuberiapvc
+  --------------------------------------------------------------*/
+.sanitariatuberiapvc {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.sanitariatuberiapvc h3 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #414c64;
+}
+
+.sanitariatuberiapvc h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.sanitariatuberiapvc i {
+    font-size: 155px;
+    margin-top: 15px;
+    float: right;
+}
+
+.sanitariatuberiapvc p {
+    margin-top: 15px;
+}
+
+#sanitariatuberiapvc-feature-img-right {
+    max-width: 100%;
+    float: right;
+    padding: 0 0 5px 5px;
+}
+
+/*  nuevo sanitariatuberiapvc*/
+
+/* Product Advanced Featuress Section
+    --------------------------------*/
+#sanitariatuberiapvc .sanitariatuberiapvc-row {
+    padding: 60px 0 30px 0;
+}
+
+#sanitariatuberiapvc i {
+    font-size: 40px;
+    transition: 0.5s;
+    float: left;
+    padding: 0 15px 0px 0;
+    line-height: 1;
+}
+
+#sanitariatuberiapvc i:before {
+    background: #1dc8cd;
+    background: linear-gradient(45deg, #f16024 0%, #0f163a 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#sanitariatuberiapvc .sanitariatuberiapvc-img-right {
+    max-width: 100%;
+    float: right;
+    padding: 0 0 30px 30px;
+}
+
+#sanitariatuberiapvc .sanitariatuberiapvc-img-left {
+    max-width: 100%;
+    float: left;
+    padding: 0 30px 30px 0;
+}
+
+
+#sanitariatuberiapvc div{
+     padding-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+
+    #sanitariatuberiapvc .sanitariatuberiapvc-img-right,
+    #sanitariatuberiapvc .sanitariatuberiapvc-img-left {
+        max-width: 100%;
+    }
+}
+/*@media (max-width: 992px) */
+@media (max-width: 980px) {
+
+    #sanitariatuberiapvc .sanitariatuberiapvc-img-right,
+    #sanitariatuberiapvc .sanitariatuberiapvc-img-left {
+        max-width: 100%;
+        float: none;
+        padding: 0 0 30px 0;
+    }
+}
+/*  nuevo sanitariatuberiapvc*/
+/*---------------------------- # Servicees soldaduras   ----------------*/
+
+.soldaduras .icon-box {
+    text-align: center;
+    padding: 70px 20px 80px 20px;
+    transition: all ease-in-out 0.3s;
+    background: #fff;
+    box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+}
+
+.soldaduras .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out 0.3s;
+    position: relative;
+    background: #f5f5f5;
+    border-radius: 50px;
+}
+
+.soldaduras .icon-box .icon i {
+    font-size: 32px;
+    transition: 0.5s;
+    line-height: 1;
+    position: relative;
+}
+
+.soldaduras .icon-box h4 {
+    font-weight: 600;
+    margin: 10px 0 15px 0;
+    font-size: 22px;
+}
+
+.soldaduras .icon-box h4 a {
+    color: #414c64;
+    transition: ease-in-out 0.3s;
+}
+
+.soldaduras .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.soldaduras .icon-box:hover {
+    border-color: #fff;
+    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+
+.soldaduras .iconbox-blue i {
+    color: #47aeff;
+}
+
+.soldaduras .iconbox-blue:hover .icon {
+    background: #47aeff;
+}
+
+.soldaduras .iconbox-blue:hover .icon i {
+    color: #fff;
+}
+
+.soldaduras .iconbox-orange i {
+    color: #ffa76e;
+}
+
+.soldaduras .iconbox-orange:hover .icon {
+    background: #ffa76e;
+}
+
+.soldaduras .iconbox-orange:hover .icon i {
+    color: #fff;
+}
+
+.soldaduras .iconbox-pink i {
+    color: #e80368;
+}
+
+.soldaduras .iconbox-pink:hover .icon {
+    background: #e80368;
+}
+
+.soldaduras .iconbox-pink:hover .icon i {
+    color: #fff;
+}
+
+.soldaduras .iconbox-yellow i {
+    color: #ffbb2c;
+}
+
+.soldaduras .iconbox-yellow:hover .icon {
+    background: #ffbb2c;
+}
+
+.soldaduras .iconbox-yellow:hover .icon i {
+    color: #fff;
+}
+
+.soldaduras .iconbox-red i {
+    color: #ff5828;
+}
+
+.soldaduras .iconbox-red:hover .icon {
+    background: #ff5828;
+}
+
+.soldaduras .iconbox-red:hover .icon i {
+    color: #fff;
+}
+
+.soldaduras .iconbox-teal i {
+    color: #11dbcf;
+}
+
+.soldaduras .iconbox-teal:hover .icon {
+    background: #11dbcf;
+}
+
+.soldaduras .iconbox-teal:hover .icon i {
+    color: #fff;
+}
+
+/*---------------------------------   # Cta pendiente ctatuberia   -------------------*/
+
+.cta {
+    background: #0F163A;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.cta h3 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.cta p {
+    color: #fff;
+}
+
+.cta .cta-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 35px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid #00bb2d;
+    color: #fff;
+}
+
+.cta .cta-btn:hover {
+    background: #f16024;
+}
+
+
+.ctatuberia {
+    background: #f16024;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.ctatuberia h3 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.ctatuberia p {
+    color: #fff;
+}
+
+.ctatuberia .ctatuberia-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 35px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid #0F163A; 
+    color: #fff;
+}
+
+.ctatuberia .ctatuberia-btn:hover {
+    background:   #0F163A; 
+}
+
+
+
+/*--------------------------------------------------------------
+  # Testimonials
+  --------------------------------------------------------------*/
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+    overflow: hidden;
+}
+
+.testimonials .testimonial-item {
+    box-sizing: content-box;
+    min-height: 320px;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+    width: 90px;
+    border-radius: 50%;
+    margin: -40px 0 0 40px;
+    position: relative;
+    z-index: 2;
+    border: 6px solid #fff;
+}
+
+.testimonials .testimonial-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 45px;
+    color: #111;
+}
+
+.testimonials .testimonial-item h4 {
+    font-size: 14px;
+    color: #999;
+    margin: 0 0 0 45px;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+    color: #ffe7a0;
+    font-size: 26px;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+    display: inline-block;
+    right: -5px;
+    position: relative;
+    top: 10px;
+}
+
+.testimonials .testimonial-item p {
+    font-style: italic;
+    margin: 0 15px 0 15px;
+    padding: 20px 20px 60px 20px;
+    background: #fafafc;
+    position: relative;
+    border-radius: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonials .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    opacity: 1;
+    border: 1px solid #f16024;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #f16024;
+}
+/*--------------------------------------------------------------
+  # Portfoliio productos electricos
+  --------------------------------------------------------------*/
+.productoselectricos #productoselectricos-flters {
+    padding: 0;
+    margin: 0 auto 25px auto;
+    list-style: none;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.productoselectricos #productoselectricos-flters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 18px 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    color: #444444;
+    margin: 0 3px 10px 3px;
+    transition: all ease-in-out 0.3s;
+    background: #fafafc;
+    border-radius: 50px;
+}
+
+.productoselectricos #productoselectricos-flters li:hover,
+.productoselectricos #productoselectricos-flters li.filter-active {
+    color: #414c64;
+    background: #f16024;
+}
+
+.productoselectricos #productoselectricos-flters li:last-child {
+    margin-right: 0;
+}
+
+.productoselectricos .productoselectricos-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.productoselectricos .productoselectricos-item img {
+    position: relative;
+    top: 0;
+    transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.productoselectricos .productoselectricos-item .productoselectricos-info {
+    opacity: 0;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: -50px;
+    z-index: 3;
+    transition: all ease-in-out 0.3s;
+    background: #f16024;
+    padding: 15px 20px;
+}
+
+.productoselectricos .productoselectricos-item .productoselectricos-info h4 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.productoselectricos .productoselectricos-item .productoselectricos-info p {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.productoselectricos .productoselectricos-item .productoselectricos-info .preview-link,
+.productoselectricos .productoselectricos-item .productoselectricos-info .details-link {
+    position: absolute;
+    right: 50px;
+    font-size: 24px;
+    top: calc(50% - 18px);
+    color: rgba(255, 255, 255, 0.7);
+    transition: ease-in-out 0.3s;
+}
+
+.productoselectricos .productoselectricos-item .productoselectricos-info .preview-link:hover,
+.productoselectricos .productoselectricos-item .productoselectricos-info .details-link:hover {
+    color: #fff;
+}
+
+.productoselectricos .productoselectricos-item .productoselectricos-info .details-link {
+    right: 15px;
+}
+
+.productoselectricos .productoselectricos-item:hover img {
+    top: -30px;
+}
+
+.productoselectricos .productoselectricos-item:hover .productoselectricos-info {
+    opacity: 1;
+    bottom: 0;
+}
+/*--------------------------------------------------------------
+  # productoselectricos Details
+  --------------------------------------------------------------*/
+.productoselectricos-details {
+    padding-top: 40px;
+}
+
+.productoselectricos-details .productoselectricos-details-slider img {
+    width: 100%;
+}
+
+.productoselectricos-details .productoselectricos-details-slider .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+}
+
+.productoselectricos-details .productoselectricos-details-slider .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    opacity: 1;
+    border: 1px solid #f16024;
+}
+
+.productoselectricos-details .productoselectricos-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #f16024;
+}
+
+.productoselectricos-details .productoselectricos-info {
+    padding: 30px;
+    box-shadow: 0px 0 30px rgba(65, 76, 100, 0.08);
+}
+
+.productoselectricos-details .productoselectricos-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.productoselectricos-details .productoselectricos-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+}
+
+.productoselectricos-details .productoselectricos-info ul li+li {
+    margin-top: 10px;
+}
+
+.productoselectricos-details .productoselectricos-description {
+    padding-top: 30px;
+}
+
+.productoselectricos-details .productoselectricos-description h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.productoselectricos-details .productoselectricos-description p {
+    padding: 0;
+}
+/*--------------------------------------------------------------
+  # Teaam accesoriospvc
+  --------------------------------------------------------------*/
+.accesoriospvc .member {
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 15px;
+    background: #0F173A;
+    box-shadow: 0px 2px 15px rgba(65, 76, 100, 0.06);
+}
+
+.accesoriospvc .member .member-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.accesoriospvc .member .social {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accesoriospvc .member .social a {
+    transition: color 0.3s;
+    color: #414c64;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accesoriospvc .member .social a i {
+    line-height: 0;
+}
+
+.accesoriospvc .member .social a:hover {
+    color: #f16024;
+}
+
+.accesoriospvc .member .social i {
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+.accesoriospvc .member .member-info {
+    padding: 25px 15px;
+}
+
+.accesoriospvc .member .member-info h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #414c64;
+}
+
+.accesoriospvc .member .member-info span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaaaaa;
+}
+
+.accesoriospvc .member .member-info p {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+}
+
+.accesoriospvc .member:hover .social {
+    opacity: 1;
+}
+
+/*------------------------  # Priciing Nosotros   -----------------------------------------*/
+
+.nosotros .box {
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nosotros h3 {
+    font-weight: 400;
+    margin: -20px -20px 20px -20px;
+    padding: 20px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #777777;
+    background: #f8f8f8;
+}
+
+.nosotros h4 {
+    font-size: 36px;
+    color: #f16024;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+}
+
+.nosotros h4 sup {
+    font-size: 20px;
+    top: -15px;
+    left: -3px;
+}
+
+.nosotros h4 span {
+    color: #bababa;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.nosotros ul {
+    padding: 0;
+    list-style: none;
+    color: #444444;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.nosotros ul li {
+    padding-bottom: 16px;
+}
+
+.nosotros ul i {
+    color: #f16024;
+    font-size: 18px;
+    padding-right: 4px;
+}
+
+.nosotros ul .na {
+    color: #ccc;
+    text-decoration: line-through;
+}
+
+.nosotros .btn-wrap {
+    margin: 20px -20px -20px -20px;
+    padding: 20px 15px;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.nosotros .btn-buy {
+    display: inline-block;
+    padding: 10px 35px;
+    border-radius: 4px;
+    transition: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 2px solid #c8cedc;
+    color: #6c7c9f;
+}
+
+.nosotros .btn-buy:hover {
+    background: #fff;
+}
+
+.nosotros .featured h3 {
+    color: #fff;
+    background: #f16024;
+}
+
+.nosotros .featured .btn-buy {
+    background: #f16024;
+    color: #fff;
+    border: 2px solid #f16024;
+}
+
+.nosotros .featured .btn-buy:hover {
+    background: #ffce3a;
+}
+
+.nosotros .advanced {
+    width: 200px;
+    position: absolute;
+    top: 18px;
+    right: -68px;
+    transform: rotate(45deg);
+    z-index: 1;
+    font-size: 14px;
+    padding: 1px 0 3px 0;
+    background: #f16024;
+    color: #fff;
+}
+/*--------------------------------------------------------------
+  # Frequently Asked Questions
+  --------------------------------------------------------------*/
+.faq .faq-list {
+    padding: 0 100px;
+}
+
+.faq .faq-list ul {
+    padding: 0;
+    list-style: none;
+}
+
+.faq .faq-list li+li {
+    margin-top: 15px;
+}
+
+.faq .faq-list li {
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+}
+
+.faq .faq-list a {
+    display: block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+.faq .faq-list .icon-help {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    left: 20px;
+    color: #ffce3a;
+}
+
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.faq .faq-list p {
+    margin-bottom: 0;
+    padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+    display: none;
+}
+
+.faq .faq-list a.collapsed {
+    color: #343a40;
+    transition: 0.3s;
+}
+
+.faq .faq-list a.collapsed:hover {
+    color: #f16024;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+    display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .faq .faq-list {
+        padding: 0;
+    }
+}
+
+/*---------------------------   # Contacto   ----------------------------*/
+
+.contact .info-box {
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+    padding: 20px 0 30px 0;
+  }
+  
+  .contact .info-box i.bx.bxl-whatsapp {
+    font-size: 32px;
+    color: #00bb2d;
+    border-radius: 50%;
+    padding: 8px;
+    border: 2px dotted #f16024;
+  }
+  
+  .contact .info-box a:hover i.bx.bxl-whatsapp {
+    background: #0f163a;
+    text-decoration: none;
+  }
+  
+  .contact .info-box i.bx.bx-phone-call {
+    font-size: 32px;
+    color: #0F173A;
+    border-radius: 50%;
+    padding: 8px;
+    border: 2px dotted #f16024;
+  }
+  .contact .info-box i {
+    font-size: 32px;
+    color: #f16024;
+    border-radius: 50%;
+    padding: 8px;
+    border: 2px dotted #0F173A;
+  }
+  
+  .contact .info-box h3 {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .contact .php-email-form {
+    box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+    padding: 30px;
+  }
+  
+  .contact .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .contact .php-email-form .error-message br+br {
+    margin-top: 25px;
+  }
+  
+  .contact .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .contact .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .contact .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+  
+  .contact .php-email-form input,
+  .contact .php-email-form textarea {
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  
+  .contact .php-email-form input:focus,
+  .contact .php-email-form textarea:focus {
+    border-color: #f16024;
+  }
+  
+  .contact .php-email-form input {
+    padding: 10px 15px;
+  }
+  
+  .contact .php-email-form textarea {
+    padding: 12px 15px;
+  }
+  
+  .contact .php-email-form button[type="submit"] {
+    background: #f16024;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+  
+  .contact .php-email-form button[type="submit"]:hover {
+    background: #ffce3a;
+  }
+  
+  @-webkit-keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+  
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+  
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+/*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+#footer {
+    color: #414c64;
+    font-size: 14px;
+    background: #f4f5f8;
+}
+
+#footer .footer-top {
+    padding: 60px 0 30px 0;
+    background: #fafafc;
+}
+
+#footer .footer-top .footer-contact {
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h4 {
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+}
+
+#footer .footer-top .footer-contact p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-family: "Raleway", sans-serif;
+    color: #777777;
+}
+
+#footer .footer-top h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: #f16024;
+    font-size: 18px;
+    line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+    color: #777777;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+    text-decoration: none;
+    color: #f16024;
+}
+
+#footer .footer-newsletter {
+    font-size: 15px;
+}
+
+#footer .footer-newsletter h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#footer .footer-newsletter form {
+    margin-top: 30px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 50px;
+    text-align: left;
+    border: 1px solid #e1e4ec;
+}
+
+#footer .footer-newsletter form input[type="email"] {
+    border: 0;
+    padding: 4px 8px;
+    width: calc(100% - 100px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    padding: 0 20px;
+    background: #f16024;
+    color: #fff;
+    transition: 0.3s;
+    border-radius: 50px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+    background: #F26225;
+}
+
+#footer .credits {
+    padding-top: 5px;
+    font-size: 13px;
+}
+
+#footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #b2b2b2;
+    color:  #0f163a;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+    background: #f26225;
+    text-decoration: none;
+}
